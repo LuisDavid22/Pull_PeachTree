@@ -1,0 +1,6 @@
+create database peachTreeDB;
+
+create table Asiento (numeroAsiento int  IDENTITY(1,1) PRIMARY KEY, detalleAsiento varchar(50), fecha date, totalDebito decimal, totalCredito decimal)
+
+
+create table Asiento_Detalle (ID int  IDENTITY(1,1) PRIMARY KEY,numeroAsiento int not null ,codigoCuenta varchar(10), nombreCuenta varchar(20), tipoCuenta varchar(10), valorCuenta decimal, detalleCuenta varchar(50),  FOREIGN KEY (numeroAsiento) REFERENCES Asiento(NumeroAsiento))
